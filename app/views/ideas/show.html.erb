@@ -1,6 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @idea %>
+<p>
+  <b>Name:</b>
+  <%= @idea.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @idea.description %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <%= image_tag(@idea.picture_url, width: 600) if @idea.picture.present? %>
+</p>
+
 
 <div>
   <%= link_to "Edit this idea", edit_idea_path(@idea) %> |
