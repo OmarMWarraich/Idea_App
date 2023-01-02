@@ -6,6 +6,17 @@
   <div class="col-md-3">
     <p><b>Name:</b> <%= @idea.name %></p>
     <p><b>Description:</b> <%= @idea.description %></p>
+    <h3>Comments</h3>
+    <% @comments.each do |comment| %>
+      <div>
+        <strong><%= comment.user_name %></strong>
+        <br>
+        <p><%= comment.body %></p>
+        <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    <% end %>
+    <%= render partial: 'comments/form', locals: { comment: @comment } %>
+
     <p>
       <%= link_to 'Edit', edit_idea_path(@idea) %> |
       <%= link_to 'Destroy', @idea, method: :delete, data: { confirm: 'Are you sure?' } %> |
