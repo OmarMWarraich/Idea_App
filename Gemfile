@@ -20,6 +20,7 @@ end
 
 # Use carrierwave for file uploads [https://github.com/carrierwaveuploader/carrierwave]
 gem "carrierwave"
+gem "mini_magick"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"

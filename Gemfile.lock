@@ -233,6 +233,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  mini_magick
   pg (~> 1.2)
   puma (~> 5.0)
   rails (~> 7.0.4)
