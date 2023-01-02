@@ -1,14 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<h1>Listing Ideas</h1>
 
-<h1>Ideas</h1>
-
-<div id="ideas">
-  <% @ideas.each do |idea| %>
-    <%= render idea %>
-    <p>
-      <%= link_to "Show this idea", idea %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New idea", new_idea_path %>
+<% @ideas.in_groups_of(3) do |group| %>
+  <div class="row">
+    <% group.compact.each do |idea| %>
+      <div class="col-md-4">
+        <%= image_tag idea.picture_url, width: '100%' if idea.picture.present? %>
+        <h4><%= link_to idea.name, idea %></h4>
+        <p><%= idea.description %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>
